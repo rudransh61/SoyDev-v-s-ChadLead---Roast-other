@@ -70,7 +70,7 @@ function App() {
     let linasResponse = linasResponses[Math.floor(Math.random() * linasResponses.length)];
 
     // Display user's flex
-    // setMessages(prevMessages => [...prevMessages, { text: selectedFlex, sender: 'user' }]);
+    setMessages(prevMessages => [...prevMessages, { text: selectedFlex, sender: 'user' }]);
 
     // Randomly determine if the user wins or loses
     const randomOutcome = Math.random() < 0.5; // 50% chance of winning
@@ -83,7 +83,7 @@ function App() {
     }
 
     // Display Linas' response
-    setMessages(prevMessages => [...prevMessages, { text: linasResponse, sender: 'user' }]);
+    // setMessages(prevMessages => [...prevMessages, { text: linasResponse, sender: 'linas' }]);
 
     // Randomly select the next flex option for Linas
     const linasOption = flexOptions[Math.floor(Math.random() * flexOptions.length)];

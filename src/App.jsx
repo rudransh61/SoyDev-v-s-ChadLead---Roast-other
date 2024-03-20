@@ -58,7 +58,7 @@ function App() {
   const getRandomOptions = () => {
     // Function to randomly select 3 options from the flexOptions array
     const shuffledOptions = flexOptions.sort(() => 0.5 - Math.random());
-    return shuffledOptions.slice(0, 3);
+    return shuffledOptions.slice(0, 5);
   };
 
   const handleOptionChange = (option) => {
@@ -67,7 +67,7 @@ function App() {
 
   const handleUserMessage = (selectedFlex) => {
     // This function handles the user's message and determines Linas' response
-    let linasResponse = linasResponses[Math.floor(Math.random() * linasResponses.length)];
+    
 
     // Display user's flex
     setMessages(prevMessages => [...prevMessages, { text: selectedFlex, sender: 'user' }]);
@@ -86,8 +86,8 @@ function App() {
     // setMessages(prevMessages => [...prevMessages, { text: linasResponse, sender: 'linas' }]);
 
     // Randomly select the next flex option for Linas
-    const linasOption = flexOptions[Math.floor(Math.random() * flexOptions.length)];
-    setMessages(prevMessages => [...prevMessages, { text: linasOption, sender: 'linas' }]);
+    let linasResponse = linasResponses[Math.floor(Math.random() * linasResponses.length)];
+    setMessages(prevMessages => [...prevMessages, { text: linasResponse, sender: 'linas' }]);
 
     // Get new random options for display
     setRandomOptions(getRandomOptions());
